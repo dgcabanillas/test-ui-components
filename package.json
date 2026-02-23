@@ -3,15 +3,9 @@
   "version": "1.0.0",
   "files": ["dist"],
   "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    },
     "./components/*": {
       "import": "./dist/components/*/index.mjs",
-      "require": "./dist/components/*/index.js",
-      "types": "./dist/components/*/index.d.ts"
+      "require": "./dist/components/*/index.js"
     }
   },
   "private": true,
@@ -19,7 +13,8 @@
   "scripts": {
     "build": "tsup",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "pnpm build"
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
