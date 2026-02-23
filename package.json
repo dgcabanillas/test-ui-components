@@ -1,13 +1,16 @@
 {
   "name": "@indigitalxp/ui-components",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
+  "exports": {
+    "./components/*": {
+      "import": "./dist/components/*/index.mjs",
+      "require": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
+    }
+  },
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "build": "tsup",
     "storybook": "storybook dev -p 6006",
